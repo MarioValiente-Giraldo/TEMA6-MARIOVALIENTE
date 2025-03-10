@@ -10,22 +10,23 @@ import static org.junit.jupiter.api.Assertions.*;
 public class PersonaBuilderTest {
     @Test
     public void test1(){
-        PersonaBuilder personaBuilder = new PersonaBuilder("Jaime","Lara","Ramos");
-        personaBuilder.setTelefono("958000000");
-        personaBuilder.setCiudad("Granada");
-        personaBuilder.setEdad(15);
+        Persona jaime = new PersonaBuilder("Jaime","Lara","Ramos")
+        .setTelefono("958000000")
+        .setCiudad("Granada")
+        .setEdad(15)
+        .build();
 
-        Persona jaime =  personaBuilder.build();
-        PersonaBuilder personaBuilder1 = new PersonaBuilder("Maria","Garcia","Perez");
-        personaBuilder1.setEdad(30);
-        PersonaBuilder pareja = new PersonaBuilder("Juan","Molina","Molina");
-        pareja.setEdad(30);
-        pareja.setPais("Ecuador");
-        Persona juan = pareja.build();
+        Persona juan = new PersonaBuilder("Juan","Molina","Molina")
+        .setEdad(30)
+        .setPais("Ecuador")
+        .build();
 
-        personaBuilder1.setCiudad("Almeria");
-        personaBuilder1.setPareja(juan);
-        Persona maria =  personaBuilder1.build();
+        Persona maria = new PersonaBuilder("Maria","Garcia","Perez")
+        .setEdad(30)
+        .setCiudad("Almeria")
+        .setPareja(juan).build();
+
+
 
         assertEquals("Granada",jaime.getDirection().ciudad());
         assertEquals(15,jaime.getEdad());
@@ -34,7 +35,6 @@ public class PersonaBuilderTest {
         assertEquals("España",maria.getDirection().pais());
         assertEquals(EstadoCivil.CASADO,maria.getEstadoCivil());
         assertEquals("Juan",maria.getPareja().getNombre());
-
         assertEquals("Ecuador",maria.getPareja().getDirection().pais());
     }
 
