@@ -50,8 +50,8 @@ public class PersonaBuilder {
         return this;
     }
     public PersonaBuilder setPareja(Persona p){
-        this.setEstadoCivil(EstadoCivil.CASADO);
         this.pareja = p;
+        this.estadoCivil = (this.pareja==null)? EstadoCivil.SOLTERO:EstadoCivil.CASADO;
         return this;
     }
     public Persona build(){

@@ -14,7 +14,8 @@ public class PersonaBuilderTest {
         personaBuilder.setTelefono("958000000");
         personaBuilder.setCiudad("Granada");
         personaBuilder.setEdad(15);
-       Persona jaime =  personaBuilder.build();
+
+        Persona jaime =  personaBuilder.build();
         PersonaBuilder personaBuilder1 = new PersonaBuilder("Maria","Garcia","Perez");
         personaBuilder1.setEdad(30);
         PersonaBuilder pareja = new PersonaBuilder("Juan","Molina","Molina");
