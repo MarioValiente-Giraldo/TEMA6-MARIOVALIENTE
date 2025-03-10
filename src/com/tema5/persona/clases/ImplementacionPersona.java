@@ -26,6 +26,9 @@ package com.tema5.persona.clases;
              throw new IllegalArgumentException("Estado civil incorrecto");
 
          }
+         if (pareja!=null){
+             ((ImplementacionPersona)pareja).pareja=this;
+         }
      }
      @Override
      public int getEdad(){
