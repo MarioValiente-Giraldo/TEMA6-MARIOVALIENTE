@@ -16,7 +16,7 @@ public class Hotel extends Edificio{
         }
     }
     public void añadirCliente(String c){
-        if (this.clientes.size()>=this.maximo){
+        if (this.clientes.size()==this.maximo){
             throw new IllegalStateException("Límete máximo superado");
         }
         this.clientes.add(c);
