@@ -26,8 +26,7 @@ public class GeneradorContraseñasUnica extends GeneradorContraseñas{
     }
     @Override
     public String generarContraseña(){
-        String contraseña = super.generarContraseña(12);
-        this.contraseñasGeneradas.add(contraseña);
+        String contraseña = this.generarContraseña(12);
         return contraseña;
     }
 
