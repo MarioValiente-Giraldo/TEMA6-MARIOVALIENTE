@@ -27,6 +27,7 @@ public class EquipoFutbolTest {
 
         equipo.pagarSueldoEmpleados();
 
+        assertEquals(100,ivan.getDinero(),0.01);
         assertEquals(80, ana.getDinero(),0.01);
         assertEquals(440, pepe.getDinero(),0.01);
         assertEquals(190, jorge.getDinero(),0.01);
