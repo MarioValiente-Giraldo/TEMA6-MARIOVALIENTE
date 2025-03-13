@@ -33,43 +33,29 @@ public class EquipoFutbol implements Nombrable{
 
     }
     public void pagarSueldoEmpleados() {
-        double totalPagar = 0;
-        for (Empleado x : this.empleados) {
-            if (x instanceof EmpleadoPrimable empleadoPrimable) {
-                if (empleadoPrimable.esPrimado()) {
-                    totalPagar += empleadoPrimable.getSueldo() * 1.1;
-                } else {
-                    totalPagar += empleadoPrimable.getSueldo();
+        boolean hay = true;
+        double cobra = 0;
+        for (int i = 0; i < this.empleados.size(); i++){
+            if (hay){
+                if (this.empleados.get(i) instanceof EmpleadoPrimable e){
+                    if (e.esPrimado()){
+                        cobra = e.getSueldo() * 1.1;
+                    }else {
+                        cobra = e.getSueldo();
+                    }
+                }else {
+                    cobra = this.empleados.get(i).getSueldo();
                 }
-            } else {
-                totalPagar += x.getSueldo();
-            }
-        }
-
-        if (this.presupuesto >= totalPagar) {
-            for (Empleado x : this.empleados) {
-                double sueldoAPagar = x.getSueldo();
-                if (x instanceof EmpleadoPrimable empleadoPrimable && empleadoPrimable.esPrimado()) {
-                    sueldoAPagar *= 1.1;
-                }
-                try {
-                    x.cobrar(sueldoAPagar);
-                    this.presupuesto -= sueldoAPagar;
-                } catch (CabreoException e) {
-                    System.out.println(e.getMessage());
+                if (cobra > this.presupuesto){
+                    hay = false;
+                    cobra = this.presupuesto / (this.empleados.size() - (i));
                 }
             }
-        } else {
-            int empleadosRestantes = this.empleados.size();
-            for (Empleado x : this.empleados) {
-                double sueldoRestante = this.presupuesto / empleadosRestantes;
-                try {
-                    x.cobrar(sueldoRestante);
-                    this.presupuesto -= sueldoRestante;
-                } catch (CabreoException ex) {
-                    System.out.println(ex.getMessage());
-                }
-                empleadosRestantes--;
+            try {
+                this.empleados.get(i).cobrar(cobra);
+                this.presupuesto -= cobra;
+            }catch (CabreoException cabreoException){
+                System.out.println(cabreoException.getMessage());
             }
         }
     }

@@ -15,17 +15,20 @@ public class GeneradorContraseñasUnica extends GeneradorContraseñas{
         super(r);
         this.contraseñasGeneradas = new HashSet<>();
     }
-
+    @Override
     public String generarContraseña(int longiutd){
         String contraseña;
         do {
-            contraseña = super.generadorContraseña(longiutd);
+            contraseña = super.generarContraseña(longiutd);
         } while (contraseñasGeneradas.contains(contraseña));
         this.contraseñasGeneradas.add(contraseña);
         return contraseña;
     }
+    @Override
     public String generarContraseña(){
-        return this.generarContraseña(12);
+        String contraseña = super.generarContraseña(12);
+        this.contraseñasGeneradas.add(contraseña);
+        return contraseña;
     }
 
 }

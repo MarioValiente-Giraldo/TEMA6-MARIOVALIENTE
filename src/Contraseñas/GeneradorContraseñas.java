@@ -10,7 +10,7 @@ public abstract class GeneradorContraseñas {
     public GeneradorContraseñas(Random r){
         this.random = r;
     }
-    public String generadorContraseña(int longitud){
+    public String generarContraseña(int longitud){
         String contraseña = "";
         for (int i = 0; i<longitud;i++) {
             int numeroAleatorio1 = this.random.nextInt(0, 3);
@@ -33,8 +33,8 @@ public abstract class GeneradorContraseñas {
         }
         return contraseña;
     }
-    public String generadorContraseña(){
-        return this.generadorContraseña(8);
+    public String generarContraseña(){
+        return this.generarContraseña(8);
 
     }
 
