@@ -7,16 +7,13 @@ import java.util.concurrent.locks.LockSupport;
 public class Transportista {
     private List<Paquete> paquetes;
     private long tiempoEntrega;
-
     public Transportista(long te) {
         this.paquetes = new ArrayList<>();
         this.tiempoEntrega = te;
     }
-
     public void subirCamion(Paquete p) {
         this.paquetes.add(p);
     }
-
     public void enviar() {
         for (Paquete x : this.paquetes) {
             try {
@@ -29,4 +26,3 @@ public class Transportista {
         }
     }
 }
-
