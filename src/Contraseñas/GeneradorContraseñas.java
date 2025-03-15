@@ -2,7 +2,7 @@ package Contraseñas;
 
 import java.util.Random;
 
-public abstract class GeneradorContraseñas {
+public  class GeneradorContraseñas {
     private Random random;
     public GeneradorContraseñas(){
         this.random=new Random();
