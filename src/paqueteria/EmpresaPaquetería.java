@@ -7,6 +7,10 @@ public interface EmpresaPaquetería {
 
     public abstract List<Transportista> getTransportistas();
 
-    public default void enviarPaquetes{
+    public default void enviarPaquetes(){
+        for (Transportista x : this.getTransportistas()){
+            x.enviar();
+        }
     }
+
 }

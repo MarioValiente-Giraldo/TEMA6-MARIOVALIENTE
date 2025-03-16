@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.concurrent.locks.LockSupport;
 
 public class Transportista {
-    private List<Paquete> paquetes;
+    protected List<Paquete> paquetes;
     private long tiempoEntrega;
     public Transportista(long te) {
         this.paquetes = new ArrayList<>();
