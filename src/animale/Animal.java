@@ -24,7 +24,7 @@ public abstract class Animal {
         return this.encerrado;
     }
 
-    public void setEncerrado(boolean b){
+    void setEncerrado(boolean b){
         this.encerrado = b;
     }
 
