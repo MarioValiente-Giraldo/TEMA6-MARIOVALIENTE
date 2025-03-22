@@ -27,4 +27,7 @@ public class Profesor {
             x.recibirCalificacion(this,a,nota);
         }
     }
+    public String getAsignatura(){
+        return this.asignatura;
+    }
 }
