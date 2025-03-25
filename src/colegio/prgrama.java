@@ -32,6 +32,7 @@ public class prgrama {
 
 
 
+
         profesorMatematicas.calificar(alumnoAna, 10);
         profesorHistoria.calificar(alumnoAna, 4);
         profesorMatematicas.calificar(alumnoRafael, 3);
