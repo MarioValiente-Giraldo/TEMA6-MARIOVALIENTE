@@ -1,6 +1,6 @@
 package colegio;
 
-public abstract class EmpleadoColegio {
+public abstract class EmpleadoColegio implements CalificacionListener {
     private String nombre;
     private String colegio;
 
